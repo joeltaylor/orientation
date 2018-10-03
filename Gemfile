@@ -31,9 +31,11 @@ gem 'pg'
 # Autoprefixer
 gem 'autoprefixer-rails'
 
-# Job queueing with DelayedJob
-gem 'delayed_job'
-gem 'delayed_job_active_record'
+# Job queueing with Sidekiq (requires Redis)
+gem 'sidekiq'
+
+# Job uniqueness & locking
+gem 'sidekiq-unique-jobs'
 
 # Form builder
 gem 'simple_form'
@@ -79,8 +81,12 @@ gem 'slack-notifier'
 # Transactional emails (see orientation.yml)
 gem 'mandrill_mailer'
 
+
 # Process management
 gem 'foreman'
+
+gem 'factory_girl_rails'
+gem 'faker'
 
 group :development do
   gem 'better_errors'
@@ -97,8 +103,7 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
-  gem 'factory_girl_rails'
-  gem 'faker'
+
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-remote'
