@@ -79,6 +79,9 @@ gem 'slack-notifier'
 # Transactional emails (see orientation.yml)
 gem 'mandrill_mailer'
 
+# Process management
+gem 'foreman'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
